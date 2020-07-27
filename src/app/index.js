@@ -5,6 +5,7 @@ require('./css/index.css')
 
 // module require statements
 // import TodoItem from './todoItem'
+const TodoItem = require('./todoItem')
 
 // Create component
 const TodoComponent = React.createClass({
@@ -26,6 +27,7 @@ const TodoComponent = React.createClass({
     var todos = this.state.todos;
     todos = todos.map(function(item, index){
       return(
+        <TodoItem item={item} key={index} onDelete={this.onDelete}/>
       );
     }.bind(this));
     return(
